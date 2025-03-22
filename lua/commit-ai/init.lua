@@ -1,0 +1,1 @@
+require('commit-ai.commit')
