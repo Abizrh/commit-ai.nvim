@@ -1,0 +1,58 @@
+diff --git a/src/lib/comps/rooms-availability/entry.svelte b/src/lib/comps/rooms-availability/entry.svelte
+index e810977..fbf8c91 100644
+--- a/src/lib/comps/rooms-availability/entry.svelte
++++ b/src/lib/comps/rooms-availability/entry.svelte
+@@ -55,7 +55,6 @@
+ 	function selectBed(bed: any, idx: number) {
+ 		selectedBedIdx = idx;
+ 		selectedRoomData = roomObj.beds[selectedBedIdx];
+-		console.log(roomObj);
+ 		dispatch('selectedBed', { bed, roomInfo: roomInfo(roomObj, bed) });
+ 	}
+ 
+@@ -172,11 +171,11 @@
+ 				<div class="col-span-1">
+ 					<button
+ 						class="w-full h-36 flex items-center justify-center text-xl font-bold rounded-lg transition-colors duration-200 ease-in-out border-2"
+-						class:bg-white={bed.isActive && bed.status === 1 && selectedBedIdx !== idx}
++						class:bg-white={bed.isActive && bed.status === 1 && selectedTrBedIdx !== idx}
+ 						class:border-blue-500={bed.isActive && bed.status === 1}
+-						class:text-blue-500={bed.isActive && bed.status === 1 && selectedBedIdx !== idx}
+-						class:bg-blue-500={selectedBedIdx === idx}
+-						class:text-white={selectedBedIdx === idx || !bed.isActive || bed.status === 0}
++						class:text-blue-500={bed.isActive && bed.status === 1 && selectedTrBedIdx !== idx}
++						class:bg-blue-500={selectedTrBedIdx === idx}
++						class:text-white={selectedTrBedIdx === idx || !bed.isActive || bed.status === 0}
+ 						class:bg-gray-500={!bed.isActive || bed.status === 0}
+ 						class:border-gray-500={!bed.isActive || bed.status === 0}
+ 						disabled={!bed.isActive || bed.status === 0}
+diff --git a/src/routes/(back-office)/in-patient/request/_page-comps/entry.svelte b/src/routes/(back-office)/in-patient/request/_page-comps/entry.svelte
+index 107186b..0cc91b3 100644
+--- a/src/routes/(back-office)/in-patient/request/_page-comps/entry.svelte
++++ b/src/routes/(back-office)/in-patient/request/_page-comps/entry.svelte
+@@ -36,13 +36,15 @@
+ 	let trClassroomId: number = 0;
+ 	let trWardId: number = 0;
+ 	let trRoomId: number = 0;
++	let roomInfo: string = '';
++	let trRoomInfo: string = '';
++	let isOpen = false;
+ 	let roomObj: any = {
+ 		beds: []
+ 	};
+ 	let trRoomObj: any = {
+ 		beds: []
+ 	};
+-	let isOpen = false;
+ 	let selectedBed: any = {
+ 		id: 0,
+ 		no: '',
+@@ -174,8 +176,6 @@
+ 		}
+ 	}
+ 
+-	let roomInfo: string = '';
+-	let trRoomInfo: string = '';
+ 	async function onChangeBed(e: CustomEvent<{ bed: Bed; roomInfo: string }>) {
+ 		selectedBed = e.detail.bed;
+ 		roomInfo = e.detail.roomInfo;
