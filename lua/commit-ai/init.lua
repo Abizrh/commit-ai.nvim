@@ -1,1 +1,1 @@
-require('commit-ai.commit')
+return require('commit-ai.commit')
