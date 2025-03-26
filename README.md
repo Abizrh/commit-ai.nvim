@@ -37,6 +37,12 @@ A Neovim plugin for committing with AI
 },
 ```
 
+## Usage
+
+| Command               | Description                                             |
+| --------------------- | ------------------------------------------------------- |
+| `:Commit`      | Generate a commit message suggestions with AI |
+
 ## Contributing
 
 Contributions are welcome! Please feel free to open an issue or submit a pull request.
