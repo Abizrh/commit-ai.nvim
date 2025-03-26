@@ -1,8 +1,6 @@
 # 🧠commit-ai.nvim
 
-A Neovim plugin for committing with AI
-
-
+**commit-ai** is a Neovim plugin that automatically generates commit messages using AI and summarizes changes properly! 💡
 
 https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
 
