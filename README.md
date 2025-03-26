@@ -6,6 +6,12 @@ A Neovim plugin for committing with AI
 
 https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
 
+## Requirements
+
+- Neovim 0.10+.
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- An API key for at least one of the supported AI providers
 
 
 ## Installation
