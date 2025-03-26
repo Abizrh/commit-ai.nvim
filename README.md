@@ -2,6 +2,12 @@
 
 A Neovim plugin for committing with AI
 
+
+
+https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
+
+
+
 ## Installation
 
 ### Lazy
