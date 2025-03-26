@@ -7,9 +7,9 @@ A Neovim plugin for committing with AI
 https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
 
 ## Features
-🔹 Automated Commit Message Generation – Analyzes changes (git diff) and generates commit messages automatically.
-🔹 AI-Powered Suggestions – UsesAI to create meaningful commit messages.
-🔹 Multiple Commit Message Options – Provides different commit types (feat, fix, chore, enhancement, etc.).
+- Automated Commit Message Generation – Analyzes changes (git diff) and generates commit messages automatically.
+- AI-Powered Suggestions – UsesAI to create meaningful commit messages.
+- Multiple Commit Message Options – Provides different commit types (feat, fix, chore, enhancement, etc.).
 
 ## Requirements
 
