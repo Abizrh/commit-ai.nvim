@@ -9,6 +9,7 @@ local action_state = require("telescope.actions.state")
 local previewers = require("telescope.previewers")
 local telescope = require("telescope.builtin")
 local backends = require("commit-ai.backends.gemini")
+local Prompt = require("commit-ai.prompt")
 
 local function query_ai(prompt, cb)
   backends.call_ai(prompt, function(response)
@@ -41,38 +42,11 @@ local function generate_commit_suggestions(cb)
   local git_conventions = config.git_conventions
   local format_lines = {}
   for _, convention in pairs(git_conventions) do
-    table.insert(format_lines, string.format("- %s %s: %s", convention.icon, convention.prefix, convention.type))
+    table.insert(format_lines, string.format("- %s %s (scope): %s", convention.icon, convention.prefix, convention.type))
   end
 
-  local prompt = string.format(
-    "Analyze this git diff and generate commit messages in plain text.\n" ..
-    "Use exactly this format without additional explanation:\n\n" ..
-    "- <icon> <prefix>: <commit message>\n\n" ..
-    "Options:\n%s\n\nGit diff:\n%s",
-    table.concat(format_lines, "\n"),
-    diff
-  )
+  local prompt = Prompt.default_prompt(diff, format_lines)
 
-  -- local prompt = string.format(
-  --   "Analyze this git diff and generate multiple commit messages using exactly one of these formats:\n" ..
-  --   "Format:\n" ..
-  --   "- <icon> <prefix>: <commit message>\n\n" ..
-  --   "Only respond with the commit messages, without any explanations.\n\n" ..
-  --   "- %s %s: Documentation changes\n" ..
-  --   "- %s %s: Bug fix\n" ..
-  --   "- %s %s: New feature\n" ..
-  --   "- %s %s: Chore\n" ..
-  --   "- %s %s: Breaking change\n" ..
-  --   "- %s %s: Enhancement\n\n" ..
-  --   "Git diff:\n%s",
-  --   git_conventions.docs.icon, git_conventions.docs.prefix,
-  --   git_conventions.fix.icon, git_conventions.fix.prefix,
-  --   git_conventions.feat.icon, git_conventions.feat.prefix,
-  --   git_conventions.chore.icon, git_conventions.chore.prefix,
-  --   git_conventions.refactor.icon, git_conventions.refactor.prefix,
-  --   git_conventions.enhance.icon, git_conventions.enhance.prefix,
-  --   diff
-  -- )
   query_ai(prompt, cb)
 end
 
