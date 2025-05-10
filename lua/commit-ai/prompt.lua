@@ -20,9 +20,9 @@ Commit rules:
 5. Use "docs" for documentation-only changes, including README.md and LICENSE.
 6. Use "refactor" for breaking internal code changes that don’t affect functionality.
 7. Use "enhance" for performance improvements or minor internal enhancements.
-8. The <scope> should desribe the affected module or file group (e.g., doctor, config, auth).
+8. The <scope> should desribe the affected module or file group or folder.
 9. Keep commit message should be concise and written in the imperative mood  (e.g., "add config for <context>
-10. Use only lowercase letters in the commit message.
+10. Only use lowercase letters in the commit message.
 
 Git diff:
 %s
