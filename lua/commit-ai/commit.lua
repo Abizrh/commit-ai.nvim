@@ -34,7 +34,6 @@ end
 local function generate_commit_suggestions(cb)
   local diff = Utils.get_git_diff()
   if not diff or diff == "" then
-    print("No staged changes found")
     return {}
   end
 
