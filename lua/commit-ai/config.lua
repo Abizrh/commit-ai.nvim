@@ -23,7 +23,7 @@ M.provider_options = {
   },
   gemini = {
     model = 'gemini-2.0-flash',
-    api_key = 'YOUR_API_KEY',
+    api_key = vim.env.GEMINI_API_KEY,
     stream = false,
   },
   claude = {

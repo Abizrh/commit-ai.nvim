@@ -43,7 +43,7 @@ https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
           provider_options = {
             gemini = {
               model = 'gemini-2.0-flash',
-              api_key = 'YOUR_API_KEY',
+              api_key = vim.env.GEMINI_API_KEY, -- assuming you have set GEMINI_API_KEY in .zshrc or .bashrc
               stream = false,
             },
           }
