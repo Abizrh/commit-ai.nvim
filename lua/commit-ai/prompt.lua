@@ -20,7 +20,7 @@ function M.default_prompt(diff, format_lines)
     "- <icon> <prefix> (<scope>): <commit message>",
     "",
     "Commit rules:",
-    "0. Use " .. config.language .. " for commit messages.",
+    "0. Use " .. locales[config.language] .. " for commit messages.",
     "1. Only use the above icons and prefixes.",
     "2. Use \"chore\" for configuration files (*.yml, *.json, *.env), CI/CD changes, build systems, or general non-code tasks.",
     "3. Use \"fix\" for bug fixes.",
