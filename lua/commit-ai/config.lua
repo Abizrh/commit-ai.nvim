@@ -1,7 +1,8 @@
 -- default config
 local M = {
   -- define for adding icon to your commit msg
-  icons = false
+  icons = false,
+  language = 'en',
 }
 
 -- unopiniated commit conventions
