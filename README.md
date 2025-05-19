@@ -5,9 +5,11 @@
 https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
 
 ## Features
+
 - **Automated Commit Message Generation** – Analyzes changes (git diff) and generates commit messages automatically.
 - **AI-Powered Suggestions** – UsesAI to create meaningful commit messages.
 - **Multiple Commit Message Options** – Provides different commit types (feat, fix, chore, enhancement, etc.).
+- **Multiple Commit Languages** – Supports multiple commit message languages.
 
 ## Requirements
 
@@ -15,7 +17,6 @@ https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - An API key for at least one of the supported AI providers
-
 
 ## Installation
 
@@ -31,6 +32,7 @@ https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
     config = function()
         require('commit-ai').setup {
           icons = false,
+          language = 'en', -- default language
           -- unopiniated commit conventions
           git_conventions = {
             docs = { icon = "📖", prefix = "docs", type = "Documentation changes" },
@@ -54,9 +56,9 @@ https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
 
 ## Usage
 
-| Command               | Description                                             |
-| --------------------- | ------------------------------------------------------- |
-| `:Commit`      | Generate a commit message suggestions with AI |
+| Command                                              | Description |
+| ---------------------------------------------------- | ----------- |----- |
+| `:Commit`nerate a commit message suggestions with AI |
 
 ## Contributing
 
