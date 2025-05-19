@@ -56,9 +56,9 @@ https://github.com/user-attachments/assets/b6e6aa6c-85a8-42b1-994c-fa3ffe80d760
 
 ## Usage
 
-| Command                                              | Description |
-| ---------------------------------------------------- | ----------- |----- |
-| `:Commit`nerate a commit message suggestions with AI |
+| Command   | Description                                   |
+| --------- | --------------------------------------------- |
+| `:Commit` | generate a commit message suggestions with AI |
 
 ## Contributing
 
